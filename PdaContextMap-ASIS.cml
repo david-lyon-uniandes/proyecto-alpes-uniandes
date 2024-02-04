@@ -1,0 +1,92 @@
+/* Context Map written with 'ContextMapper DSL' */
+ContextMap PdaContextMapAsis {
+	type = SYSTEM_LANDSCAPE
+	state = AS_IS
+	/* Add bounded contexts to this context map: */
+	contains DataConsolidationContext
+	contains DataCleaningContext
+	contains DataEnrichmentContext
+	contains PolicyManagementContext
+	contains RiskManagementContext
+	contains DebtCollection
+
+	/* Define the context relationships: */
+	CustomerSelfServiceContext <- CustomerManagementContext
+
+	CustomerManagementContext <- PrintingContext
+
+	PrintingContext -> PolicyManagementContext
+
+	RiskManagementContext <-> PolicyManagementContext
+
+	PolicyManagementContext <- CustomerManagementContext
+
+	DebtCollection <- PrintingContext
+
+	PolicyManagementContext <-> DebtCollection
+}
+
+/* Bounded Context Definitions */
+BoundedContext CapturaInformacionDeCompaniasContext implements CapturaInformacionCompaniasDomain
+
+//BoundedContext PullContext implements CapturaInformacionCompaniasDomain
+//BoundedContext PushContext implements CapturaInformacionCompaniasDomain
+BoundedContext CapturaInformacionContractualContext implements CapturaInformacionContractualDomain
+
+BoundedContext CapturaInformacionGisContext implements CapturaInformacionGisDomain
+
+BoundedContext CapturaInformacionCatastralYPlanosContext implements CapturaInformacionCatastralYPlanosDomain
+
+BoundedContext ConsolidacionYEnriquecimientoContext implements ProcesamientoYCalidadDeInformacionDomain
+
+BoundedContext ValidacionInformacionConsolidadaContext implements ProcesamientoYCalidadDeInformacionDomain
+
+BoundedContext CreacionIndiceConfiabilidadContext implements ProcesamientoYCalidadDeInformacionDomain
+
+BoundedContext RecoleccionInformacionManualContext implements CampoDomain
+
+BoundedContext ValidacionAuditoriaContext implements AuditoriaDomain
+
+BoundedContext EnriquecimientoValoresFaltantesContext implements AuditoriaDomain
+
+BoundedContext HabilitacionVisibilidadProducto implements AuditoriaDomain
+
+/* Domain & Subdomain Definitions */
+Domain PdaDomain {
+	Subdomain CapturaInformacionCompaniasDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Captura de información sobre las compañías"
+	}
+
+	Subdomain CapturaInformacionContractualDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Captura de información contractual"
+	}
+
+	Subdomain CapturaInformacionGisDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Captura de información geoespacial y de alojamiento"
+	}
+
+	Subdomain CapturaInformacionCatastralYPlanosDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Captura de información catastral y planos"
+	}
+
+	Subdomain CampoDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Investigación de campo o Recolección manual de datos"
+	}
+
+	Subdomain ProcesamientoYCalidadDeInformacionDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Procesamiento de calidad de datos (Machine learning)"
+	}
+
+	Subdomain AuditoriaDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Auditoria de la información para revisar Confidencialidad, consistencia y completitud"
+	}
+
+}
+
