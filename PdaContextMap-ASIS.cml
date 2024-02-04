@@ -3,39 +3,90 @@ ContextMap PdaContextMapAsis {
 	type = SYSTEM_LANDSCAPE
 	state = AS_IS
 	/* Add bounded contexts to this context map: */
-	contains DataConsolidationContext
-	contains DataCleaningContext
-	contains DataEnrichmentContext
-	contains PolicyManagementContext
-	contains RiskManagementContext
-	contains DebtCollection
+	contains CapturaInformacionDeCompaniasPullContext
+	contains CapturaInformacionDeCompaniasPushContext
+	contains CapturaInformacionContractualPullContext
+	contains CapturaInformacionContractualPushContext
+	contains CapturaInformacionGISPullContext
+	contains CapturaInformacionGISPushContext
+	contains CapturaInformacionCatastralYPlanosPullContext
+	contains CapturaInformacionCatastralYPlanosPushContext
+	contains ConsolidacionYEnriquecimientoContext
+	contains ValidacionInformacionConsolidadaContext
+	contains CreacionIndiceConfiabilidadContext
+	contains RecoleccionInformacionManualContext
+	contains ValidacionAuditoriaContext
+	contains EnriquecimientoValoresFaltantesContext
+	contains HabilitacionVisibilidadProducto
 
 	/* Define the context relationships: */
-	CustomerSelfServiceContext <- CustomerManagementContext
+	CapturaInformacionDeCompaniasPullContext <-> CapturaInformacionDeCompaniasPushContext
 
-	CustomerManagementContext <- PrintingContext
+	CapturaInformacionDeCompaniasPullContext <-> CapturaInformacionContractualPullContext
 
-	PrintingContext -> PolicyManagementContext
+	CapturaInformacionDeCompaniasPullContext <-> CapturaInformacionGISPullContext
 
-	RiskManagementContext <-> PolicyManagementContext
+	CapturaInformacionDeCompaniasPullContext <-> CapturaInformacionCatastralYPlanosPullContext
 
-	PolicyManagementContext <- CustomerManagementContext
+	CapturaInformacionContractualPullContext <-> CapturaInformacionContractualPushContext
 
-	DebtCollection <- PrintingContext
+	CapturaInformacionContractualPullContext <-> CapturaInformacionGISPullContext
 
-	PolicyManagementContext <-> DebtCollection
+	CapturaInformacionContractualPullContext <-> CapturaInformacionCatastralYPlanosPullContext
+
+	CapturaInformacionGISPullContext <-> CapturaInformacionGISPushContext
+
+	CapturaInformacionGISPullContext <-> CapturaInformacionCatastralYPlanosPullContext
+
+	CapturaInformacionCatastralYPlanosPullContext <-> CapturaInformacionCatastralYPlanosPushContext
+
+	ConsolidacionYEnriquecimientoContext<-CapturaInformacionDeCompaniasPullContext
+
+	ConsolidacionYEnriquecimientoContext<-CapturaInformacionContractualPullContext
+
+	ConsolidacionYEnriquecimientoContext<-CapturaInformacionGISPullContext
+
+	ConsolidacionYEnriquecimientoContext<-CapturaInformacionCatastralYPlanosPullContext
+
+	ValidacionInformacionConsolidadaContext<-ConsolidacionYEnriquecimientoContext
+
+	RecoleccionInformacionManualContext<-ValidacionInformacionConsolidadaContext
+
+	RecoleccionInformacionManualContext<-> CapturaInformacionDeCompaniasPullContext
+
+	RecoleccionInformacionManualContext<-> CapturaInformacionContractualPullContext
+
+	RecoleccionInformacionManualContext<-> CapturaInformacionGISPullContext
+
+	RecoleccionInformacionManualContext<-> CapturaInformacionCatastralYPlanosPullContext
+
+	CreacionIndiceConfiabilidadContext<-ValidacionInformacionConsolidadaContext
+
+	ValidacionAuditoriaContext<-CreacionIndiceConfiabilidadContext
+
+	EnriquecimientoValoresFaltantesContext<-ValidacionAuditoriaContext
+
+	HabilitacionVisibilidadProducto<-ValidacionAuditoriaContext
+
+	HabilitacionVisibilidadProducto<-EnriquecimientoValoresFaltantesContext
 }
 
 /* Bounded Context Definitions */
-BoundedContext CapturaInformacionDeCompaniasContext implements CapturaInformacionCompaniasDomain
+BoundedContext CapturaInformacionDeCompaniasPullContext implements CapturaInformacionCompaniasDomain
 
-//BoundedContext PullContext implements CapturaInformacionCompaniasDomain
-//BoundedContext PushContext implements CapturaInformacionCompaniasDomain
-BoundedContext CapturaInformacionContractualContext implements CapturaInformacionContractualDomain
+BoundedContext CapturaInformacionDeCompaniasPushContext implements CapturaInformacionCompaniasDomain
 
-BoundedContext CapturaInformacionGisContext implements CapturaInformacionGisDomain
+BoundedContext CapturaInformacionContractualPullContext implements CapturaInformacionContractualDomain
 
-BoundedContext CapturaInformacionCatastralYPlanosContext implements CapturaInformacionCatastralYPlanosDomain
+BoundedContext CapturaInformacionContractualPushContext implements CapturaInformacionContractualDomain
+
+BoundedContext CapturaInformacionGISPullContext implements CapturaInformacionGISDomain
+
+BoundedContext CapturaInformacionGISPushContext implements CapturaInformacionGISDomain
+
+BoundedContext CapturaInformacionCatastralYPlanosPullContext implements CapturaInformacionCatastralYPlanosDomain
+
+BoundedContext CapturaInformacionCatastralYPlanosPushContext implements CapturaInformacionCatastralYPlanosDomain
 
 BoundedContext ConsolidacionYEnriquecimientoContext implements ProcesamientoYCalidadDeInformacionDomain
 
@@ -63,7 +114,7 @@ Domain PdaDomain {
 		domainVisionStatement = "Captura de información contractual"
 	}
 
-	Subdomain CapturaInformacionGisDomain {
+	Subdomain CapturaInformacionGISDomain {
 		type = CORE_DOMAIN
 		domainVisionStatement = "Captura de información geoespacial y de alojamiento"
 	}
@@ -73,14 +124,14 @@ Domain PdaDomain {
 		domainVisionStatement = "Captura de información catastral y planos"
 	}
 
-	Subdomain CampoDomain {
-		type = CORE_DOMAIN
-		domainVisionStatement = "Investigación de campo o Recolección manual de datos"
-	}
-
 	Subdomain ProcesamientoYCalidadDeInformacionDomain {
 		type = CORE_DOMAIN
 		domainVisionStatement = "Procesamiento de calidad de datos (Machine learning)"
+	}
+
+	Subdomain CampoDomain {
+		type = CORE_DOMAIN
+		domainVisionStatement = "Investigación de campo o Recolección manual de datos"
 	}
 
 	Subdomain AuditoriaDomain {
