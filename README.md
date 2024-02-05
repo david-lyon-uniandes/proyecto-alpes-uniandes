@@ -12,14 +12,24 @@ Estructura del proyecto:
 - PdaContextMap-ASIS.cml
 - PdaContextMap-TOBE.cml
 - src-gen
+  
 - README
 
 AS-IS
-- Dominio
+- Dominio: Proveer información sobre bienes raíces comerciales.
 
-- Subdominios
+- Subdominios:
 
-- Bounded Context
+  * Captura de información sobre las compañías
+  * Captura de información contractual
+  * Captura de información geoespacial y de alojamiento
+  * Captura de información catastral y planos
+  * Procesamiento y  Calidad De Información (Machine learning)
+  * Campo
+  * Auditoria
+
+- Bounded Context: https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/blob/main/src-gen/PdaContextMap-ASIS_ContextMap.png
+
 
 - EventStorming
 
@@ -28,11 +38,21 @@ https://miro.com/app/board/uXjVNxyiTmk=/
 
 
 TO-BE
-- Dominio
+- Dominio: Proveer información sobre bienes raíces comerciales.
 
-- Subdominios
 
-- Bounded Context
+- Subdominios:
+
+  * Captura de información sobre las compañías
+  * Captura de información contractual
+  * Captura de información geoespacial y de alojamiento
+  * Captura de información catastral y planos
+  * Procesamiento y  Calidad De Información (Machine learning)
+  * Campo
+  * Auditoria
+
+- Bounded Context: https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/blob/main/src-gen/PdaContextMap-TOBE_ContextMap.png
+
 
 - EventStorming
 https://miro.com/app/board/uXjVNxyiTmk=/
