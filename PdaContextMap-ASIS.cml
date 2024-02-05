@@ -17,7 +17,7 @@ ContextMap PdaContextMapAsis {
 	contains RecoleccionInformacionManualContext
 	contains ValidacionAuditoriaContext
 	contains EnriquecimientoValoresFaltantesContext
-	contains HabilitacionVisibilidadProducto
+	contains HabilitacionVisibilidadProductoContext
 
 	/* Define the context relationships: */
 	CapturaInformacionDeCompaniasPullContext <-> CapturaInformacionDeCompaniasPushContext
@@ -66,9 +66,9 @@ ContextMap PdaContextMapAsis {
 
 	EnriquecimientoValoresFaltantesContext<-ValidacionAuditoriaContext
 
-	HabilitacionVisibilidadProducto<-ValidacionAuditoriaContext
+	HabilitacionVisibilidadProductoContext<-ValidacionAuditoriaContext
 
-	HabilitacionVisibilidadProducto<-EnriquecimientoValoresFaltantesContext
+	HabilitacionVisibilidadProductoContext<-EnriquecimientoValoresFaltantesContext
 }
 
 /* Bounded Context Definitions */
@@ -100,10 +100,18 @@ BoundedContext ValidacionAuditoriaContext implements AuditoriaDomain
 
 BoundedContext EnriquecimientoValoresFaltantesContext implements AuditoriaDomain
 
-BoundedContext HabilitacionVisibilidadProducto implements AuditoriaDomain
+BoundedContext HabilitacionVisibilidadProductoContext implements AuditoriaDomain
 
 /* Domain & Subdomain Definitions */
 Domain PdaDomain {
+	domainVisionStatement ="El modelo describe un proceso integral que abarca la búsqueda, extracción, complementación,
+    	tratamiento, validación, enriquecimiento y habilitación de la información para nuestros usuarios finales.
+    	Este proceso está diseñado para ser accesible en cualquier momento y desde cualquier plataforma B2B,
+    	proporcionando un valor significativo y útil para respaldar las decisiones de compra.
+    	Se muestran los diversos roles de usuarios, exponiendo las relaciones e interacciones inherentes a cada evento y comando.
+    	Además, se indican las reglas correspondientes y destacan las integraciones con sistemas innovadores para agilizar los resultados de revisiones y análisis,
+    	reduciendo el esfuerzo humano y la posibilidad de errores.
+    	"
 	Subdomain CapturaInformacionCompaniasDomain {
 		type = CORE_DOMAIN
 		domainVisionStatement = "Captura de información sobre las compañías"

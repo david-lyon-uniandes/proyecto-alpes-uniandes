@@ -1,0 +1,149 @@
+/* Context Map written with 'ContextMapper DSL' */
+ContextMap PdaContextMapAsis {
+    type = SYSTEM_LANDSCAPE
+    state = AS_IS
+    /* Add bounded contexts to this context map: */
+    contains CapturaInformacionDeCompaniasPullContext
+    contains CapturaInformacionDeCompaniasPushContext
+    contains CapturaInformacionContractualPullContext
+    contains CapturaInformacionContractualPushContext
+    contains CapturaInformacionGISPullContext
+    contains CapturaInformacionGISPushContext
+    contains CapturaInformacionCatastralYPlanosPullContext
+    contains CapturaInformacionCatastralYPlanosPushContext
+    contains ConsolidacionYOrganizacionPorPaisContext
+    contains EnriquecimientoDeDatosContext
+    contains AplicacionReglasNegocioPorPaisContext
+    contains RecoleccionInformacionManualContext
+    contains ValidacionInformacionConsolidadaGeolocalizadaContext
+    contains AplicacionReglasNegocioAuditoriaContext
+    contains ValidacionDeDatosContext
+    contains EnriquecimientoDeValoresFaltantesAutomatizadosContext
+    contains HabilitacionVisibilidadProductoContext
+
+    /* Define the context relationships: */
+    CapturaInformacionDeCompaniasPullContext <-> CapturaInformacionDeCompaniasPushContext
+
+    CapturaInformacionContractualPullContext <-> CapturaInformacionContractualPushContext
+
+    CapturaInformacionGISPullContext <-> CapturaInformacionGISPushContext
+
+    CapturaInformacionCatastralYPlanosPullContext <-> CapturaInformacionCatastralYPlanosPushContext
+
+    CapturaInformacionDeCompaniasPullContext [OHS, PL] ->CapturaInformacionContractualPullContext
+
+    CapturaInformacionDeCompaniasPullContext [OHS, PL] ->CapturaInformacionGISPullContext
+
+    CapturaInformacionDeCompaniasPullContext [OHS, PL] ->CapturaInformacionCatastralYPlanosPullContext
+
+    ConsolidacionYOrganizacionPorPaisContext [P] <-> [P] CapturaInformacionDeCompaniasPullContext
+
+    ConsolidacionYOrganizacionPorPaisContext [P] <-> [P] CapturaInformacionContractualPullContext
+
+    ConsolidacionYOrganizacionPorPaisContext [P] <-> [P] CapturaInformacionGISPullContext
+
+    ConsolidacionYOrganizacionPorPaisContext [P] <-> [P] CapturaInformacionCatastralYPlanosPullContext
+
+    EnriquecimientoDeDatosContext[P] <-> [P] ConsolidacionYOrganizacionPorPaisContext
+
+    EnriquecimientoDeDatosContext[P] <-> [P] AplicacionReglasNegocioPorPaisContext
+
+    ValidacionInformacionConsolidadaGeolocalizadaContext[P] <-> [P] AplicacionReglasNegocioPorPaisContext
+
+    ValidacionInformacionConsolidadaGeolocalizadaContext[P] <-> [P] RecoleccionInformacionManualContext
+
+    RecoleccionInformacionManualContext  [ACL] <- CapturaInformacionDeCompaniasPullContext
+
+    RecoleccionInformacionManualContext  [ACL] <- CapturaInformacionContractualPullContext
+
+    RecoleccionInformacionManualContext  [ACL] <- CapturaInformacionGISPullContext
+
+    RecoleccionInformacionManualContext  [ACL] <- CapturaInformacionCatastralYPlanosPullContext
+
+    ValidacionInformacionConsolidadaGeolocalizadaContext [P] <-> [P] AplicacionReglasNegocioAuditoriaContext
+
+    AplicacionReglasNegocioAuditoriaContext[P] <-> [P] ValidacionDeDatosContext
+
+    ValidacionDeDatosContext[P] <-> [P] EnriquecimientoDeValoresFaltantesAutomatizadosContext
+
+    EnriquecimientoDeValoresFaltantesAutomatizadosContext[P] <-> [P] HabilitacionVisibilidadProductoContext
+
+    HabilitacionVisibilidadProductoContext[P] <-> [P] ValidacionDeDatosContext
+}
+
+/* Bounded Context Definitions */
+BoundedContext CapturaInformacionDeCompaniasPullContext implements CapturaInformacionCompaniasDomain
+
+BoundedContext CapturaInformacionDeCompaniasPushContext implements CapturaInformacionCompaniasDomain
+
+BoundedContext CapturaInformacionContractualPullContext implements CapturaInformacionContractualDomain
+
+BoundedContext CapturaInformacionContractualPushContext implements CapturaInformacionContractualDomain
+
+BoundedContext CapturaInformacionGISPullContext implements CapturaInformacionGISDomain
+
+BoundedContext CapturaInformacionGISPushContext implements CapturaInformacionGISDomain
+
+BoundedContext CapturaInformacionCatastralYPlanosPullContext implements CapturaInformacionCatastralYPlanosDomain
+
+BoundedContext CapturaInformacionCatastralYPlanosPushContext implements CapturaInformacionCatastralYPlanosDomain
+
+BoundedContext ConsolidacionYOrganizacionPorPaisContext implements ProcesamientoYCalidadDeInformacionDomain
+
+BoundedContext EnriquecimientoDeDatosContext implements ProcesamientoYCalidadDeInformacionDomain
+
+BoundedContext AplicacionReglasNegocioPorPaisContext implements ProcesamientoYCalidadDeInformacionDomain
+
+BoundedContext RecoleccionInformacionManualContext implements CampoDomain
+
+BoundedContext ValidacionInformacionConsolidadaGeolocalizadaContext implements AuditoriaDomain
+
+BoundedContext AplicacionReglasNegocioAuditoriaContext implements AuditoriaDomain
+
+BoundedContext ValidacionDeDatosContext implements AuditoriaDomain
+
+BoundedContext EnriquecimientoDeValoresFaltantesAutomatizadosContext implements AuditoriaDomain
+
+BoundedContext HabilitacionVisibilidadProductoContext implements AuditoriaDomain
+
+/* Domain & Subdomain Definitions */
+Domain PdaDomain {
+    domainVisionStatement=""
+
+	Subdomain CapturaInformacionCompaniasDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Captura de información sobre las compañías"
+    }
+
+    Subdomain CapturaInformacionContractualDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Captura de información contractual"
+    }
+
+    Subdomain CapturaInformacionGISDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Captura de información geoespacial y de alojamiento"
+    }
+
+    Subdomain CapturaInformacionCatastralYPlanosDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Captura de información catastral y planos"
+    }
+
+    Subdomain ProcesamientoYCalidadDeInformacionDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Procesamiento de calidad de datos (Machine learning)"
+    }
+
+    Subdomain CampoDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Investigación de campo o Recolección manual de datos"
+    }
+
+    Subdomain AuditoriaDomain {
+        type = CORE_DOMAIN
+        domainVisionStatement = "Auditoria de la información para revisar Confidencialidad, consistencia y completitud"
+    }
+
+}
+

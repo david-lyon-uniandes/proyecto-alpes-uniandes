@@ -1,0 +1,72 @@
+digraph "ContextMapGraph" {
+graph ["imagepath"="/tmp/GraphvizJava"]
+"AplicacionReglasNegocioAuditoriaContext" ["margin"="0.3","orientation"="138","shape"="egg","fontsize"="16","style"="bold","label"="AplicacionReglasNegocioAuditoriaContext\n","fontname"="sans-serif"]
+"ValidacionDeDatosContext" ["margin"="0.3","orientation"="344","shape"="egg","fontsize"="16","style"="bold","label"="ValidacionDeDatosContext\n","fontname"="sans-serif"]
+"EnriquecimientoDeValoresFaltantesAutomatizadosContext" ["margin"="0.3","orientation"="212","shape"="egg","fontsize"="16","style"="bold","label"="EnriquecimientoDeValoresFaltantesAutomatizadosContext\n","fontname"="sans-serif"]
+"HabilitacionVisibilidadProductoContext" ["margin"="0.3","orientation"="216","shape"="egg","fontsize"="16","style"="bold","label"="HabilitacionVisibilidadProductoContext\n","fontname"="sans-serif"]
+"AplicacionReglasNegocioPorPaisContext" ["margin"="0.3","orientation"="339","shape"="egg","fontsize"="16","style"="bold","label"="AplicacionReglasNegocioPorPaisContext\n","fontname"="sans-serif"]
+"CapturaInformacionCatastralYPlanosPullContext" ["margin"="0.3","orientation"="48","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionCatastralYPlanosPullContext\n","fontname"="sans-serif"]
+"RecoleccionInformacionManualContext" ["margin"="0.3","orientation"="51","shape"="egg","fontsize"="16","style"="bold","label"="RecoleccionInformacionManualContext\n","fontname"="sans-serif"]
+"CapturaInformacionCatastralYPlanosPushContext" ["margin"="0.3","orientation"="313","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionCatastralYPlanosPushContext\n","fontname"="sans-serif"]
+"CapturaInformacionContractualPullContext" ["margin"="0.3","orientation"="248","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionContractualPullContext\n","fontname"="sans-serif"]
+"CapturaInformacionContractualPushContext" ["margin"="0.3","orientation"="326","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionContractualPushContext\n","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPullContext" ["margin"="0.3","orientation"="310","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionDeCompaniasPullContext\n","fontname"="sans-serif"]
+"CapturaInformacionGISPullContext" ["margin"="0.3","orientation"="239","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionGISPullContext\n","fontname"="sans-serif"]
+"CapturaInformacionGISPushContext" ["margin"="0.3","orientation"="229","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionGISPushContext\n","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPushContext" ["margin"="0.3","orientation"="252","shape"="egg","fontsize"="16","style"="bold","label"="CapturaInformacionDeCompaniasPushContext\n","fontname"="sans-serif"]
+"ConsolidacionYOrganizacionPorPaisContext" ["margin"="0.3","orientation"="35","shape"="egg","fontsize"="16","style"="bold","label"="ConsolidacionYOrganizacionPorPaisContext\n","fontname"="sans-serif"]
+"EnriquecimientoDeDatosContext" ["margin"="0.3","orientation"="307","shape"="egg","fontsize"="16","style"="bold","label"="EnriquecimientoDeDatosContext\n","fontname"="sans-serif"]
+"ValidacionInformacionConsolidadaGeolocalizadaContext" ["margin"="0.3","orientation"="342","shape"="egg","fontsize"="16","style"="bold","label"="ValidacionInformacionConsolidadaGeolocalizadaContext\n","fontname"="sans-serif"]
+"AplicacionReglasNegocioAuditoriaContext" -> "ValidacionDeDatosContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ValidacionDeDatosContext" -> "EnriquecimientoDeValoresFaltantesAutomatizadosContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"EnriquecimientoDeValoresFaltantesAutomatizadosContext" -> "HabilitacionVisibilidadProductoContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"HabilitacionVisibilidadProductoContext" -> "ValidacionDeDatosContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionCatastralYPlanosPullContext" -> "RecoleccionInformacionManualContext" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionCatastralYPlanosPullContext" -> "CapturaInformacionCatastralYPlanosPushContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionContractualPullContext" -> "RecoleccionInformacionManualContext" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionContractualPullContext" -> "CapturaInformacionContractualPushContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPullContext" -> "RecoleccionInformacionManualContext" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPullContext" -> "CapturaInformacionContractualPullContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>OHS, PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPullContext" -> "CapturaInformacionGISPullContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>OHS, PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPullContext" -> "CapturaInformacionDeCompaniasPushContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionDeCompaniasPullContext" -> "CapturaInformacionCatastralYPlanosPullContext" ["headlabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">D</td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">U</td><td sides="trbl" bgcolor="white"><font>OHS, PL</font></td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionGISPullContext" -> "CapturaInformacionGISPushContext" ["fontsize"="12","style"="bold","label"="Shared Kernel","dir"="none","fontname"="sans-serif"]
+"CapturaInformacionGISPullContext" -> "RecoleccionInformacionManualContext" ["headlabel"=<<table cellspacing="0" cellborder="1" border="0">
+<tr><td bgcolor="white" sides="r">D</td><td sides="trbl" bgcolor="white"><font>ACL</font></td></tr>
+</table>>,"labeldistance"="0","fontsize"="12","taillabel"=<<table cellspacing="0" cellborder="0" border="0">
+<tr><td bgcolor="white">U</td></tr>
+</table>>,"style"="bold","label"="                                        ","dir"="none","fontname"="sans-serif"]
+"ConsolidacionYOrganizacionPorPaisContext" -> "CapturaInformacionDeCompaniasPullContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ConsolidacionYOrganizacionPorPaisContext" -> "CapturaInformacionCatastralYPlanosPullContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ConsolidacionYOrganizacionPorPaisContext" -> "CapturaInformacionContractualPullContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ConsolidacionYOrganizacionPorPaisContext" -> "CapturaInformacionGISPullContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"EnriquecimientoDeDatosContext" -> "ConsolidacionYOrganizacionPorPaisContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"EnriquecimientoDeDatosContext" -> "AplicacionReglasNegocioPorPaisContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ValidacionInformacionConsolidadaGeolocalizadaContext" -> "RecoleccionInformacionManualContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ValidacionInformacionConsolidadaGeolocalizadaContext" -> "AplicacionReglasNegocioAuditoriaContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+"ValidacionInformacionConsolidadaGeolocalizadaContext" -> "AplicacionReglasNegocioPorPaisContext" ["fontsize"="12","style"="bold","label"="Partnership","dir"="none","fontname"="sans-serif"]
+}
