@@ -46,6 +46,7 @@ AS-IS
 
 https://miro.com/app/board/uXjVNxyiTmk=/
 
+![event storming AS-IS](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/assets/111364928/ff8b0417-c5c5-4962-a054-b1d8e29f58db)
 
 
 TO-BE
@@ -71,4 +72,5 @@ TO-BE
 - EventStorming
 https://miro.com/app/board/uXjVNxyiTmk=/
 
+![event storming TOBE](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/assets/111364928/548b02f1-2fc8-432b-b012-a61681e01488)
 
