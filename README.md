@@ -14,3 +14,24 @@ Estructura del proyecto:
 - src-gen
 - README
 
+AS-IS
+- Dominio
+
+- Subdominios
+
+- Bounded Context
+
+- EventStorming
+https://miro.com/app/board/uXjVNxyiTmk=/
+
+
+
+TO-BE
+- Dominio
+
+- Subdominios
+
+- Bounded Context
+
+- EventStorming
+https://miro.com/app/board/uXjVNxyiTmk=/
