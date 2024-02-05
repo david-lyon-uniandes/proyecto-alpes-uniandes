@@ -108,7 +108,12 @@ BoundedContext HabilitacionVisibilidadProductoContext implements AuditoriaDomain
 
 /* Domain & Subdomain Definitions */
 Domain PdaDomain {
-    domainVisionStatement=""
+    domainVisionStatement="En Properties of the Alps (PDA), nos esforzamos por ser líderes a nivel mundial en la entrega de información exhaustiva y confiable sobre bienes raíces.
+    Nuestra visión se orienta hacia la superación de fronteras, ofreciendo servicios de primera calidad que nos consagren como la referencia indiscutible en el mercado internacional.
+    Con este propósito, nuestra ambición de expansión se extiende más allá de las fronteras de Colombia, abarcando mercados en Latinoamérica, Europa, Asia y Oceanía.
+    Buscamos convertirnos en la opción preferida para aquellos que buscan información inmobiliaria precisa y servicios incomparables.
+    Aspiramos a contar con una plataforma altamente escalable, extensible y adaptable, capaz de ajustarse a las particularidades de cualquier región global.
+    En consecuencia, el sistema debe ser diseñado de manera que permita a los equipos de tecnología e investigación trabajar de manera independiente, evitando cuellos de botella en el desarrollo y despliegue de servicios."
 
 	Subdomain CapturaInformacionCompaniasDomain {
         type = CORE_DOMAIN
