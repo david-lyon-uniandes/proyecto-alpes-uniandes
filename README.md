@@ -22,6 +22,7 @@ AS-IS
 - Bounded Context
 
 - EventStorming
+
 https://miro.com/app/board/uXjVNxyiTmk=/
 
 
