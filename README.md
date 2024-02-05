@@ -25,7 +25,7 @@ Estructura del proyecto:
 AS-IS
 - Dominio: Proveer información sobre bienes raíces comerciales.
 
-- Vision statement: [vision statement](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/blob/main/PdaContextMap-ASIS.cml)
+- Vision statement: [vision statement](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/blob/main/PdaContextMap-ASIS.cml#L107)
 
 - Subdominios
   * Captura de información sobre las compañías
@@ -49,7 +49,7 @@ AS-IS
 
 TO-BE
 - Dominio: Proveer información sobre bienes raíces comerciales.
-- Vision statement: [vision statement](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/blob/main/PdaContextMap-TOBE.cml)
+- Vision statement: [vision statement](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/blob/main/PdaContextMap-TOBE.cml#L111)
 
 - Subdominios:
 
