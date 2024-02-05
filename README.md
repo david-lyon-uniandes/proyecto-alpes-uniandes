@@ -42,9 +42,7 @@ AS-IS
 ![PdaContextMap-ASIS_ContextMap](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/assets/111364928/e9d85419-fa92-4d8f-943c-58c6995b5e4d)
 
 
-- EventStorming
-
-https://miro.com/app/board/uXjVNxyiTmk=/
+- EventStorming: https://miro.com/app/board/uXjVNxyiTmk=/
 
 ![event storming AS-IS](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/assets/111364928/ff8b0417-c5c5-4962-a054-b1d8e29f58db)
 
@@ -69,8 +67,7 @@ TO-BE
 ![PdaContextMap-TOBE_ContextMap](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/assets/111364928/0d199a25-424a-4e0a-8972-977c96a8ade9)
 
 
-- EventStorming
-https://miro.com/app/board/uXjVNxyiTmk=/
+- EventStorming: https://miro.com/app/board/uXjVNxyiTmk=/
 
 ![event storming TOBE](https://github.com/david-lyon-uniandes/proyecto-alpes-uniandes/assets/111364928/548b02f1-2fc8-432b-b012-a61681e01488)
 
